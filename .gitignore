@@ -1,0 +1,7 @@
+//.gitignore
+/node_modules
+.env
+.vscode
+.DS_Store
+.idea
+pull-req-list.txt
