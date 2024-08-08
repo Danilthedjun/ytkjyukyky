@@ -17,9 +17,17 @@ import { authenticate } from '../middlewares/authenticate.js';
 
 const authRouter = Router();
 
-authRouter.post('/signup', validateBody(userSchema), ctrlWrapper(signUpController));
+authRouter.post(
+  '/signup',
+  validateBody(userSchema),
+  ctrlWrapper(signUpController),
+);
 
-authRouter.post('/signin', validateBody(userSchema), ctrlWrapper(signInController));
+authRouter.post(
+  '/signin',
+  validateBody(userSchema),
+  ctrlWrapper(signInController),
+);
 
 authRouter.get('/:userId', isValidId, ctrlWrapper(getUserController));
 
@@ -33,6 +41,6 @@ authRouter.patch(
 
 authRouter.post('/refresh/:userId', isValidId, ctrlWrapper(refreshController));
 
-authRouter.post('/logout/:userId', isValidId, ctrlWrapper(logoutController));
+authRouter.post('/logout', isValidId, ctrlWrapper(logoutController));
 
 export default authRouter;
