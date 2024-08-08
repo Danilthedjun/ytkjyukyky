@@ -21,7 +21,12 @@ const setupServer = () => {
 
   const app = express();
 
-  app.use(cors());
+  app.use(
+    cors({
+      origin: 'https://wreyhgyuhwr45yuh-781i17qt7-daanils-projects.vercel.app',
+      credentials: true,
+    }),
+  );
 
   app.use(logger);
   app.use(cookieParser());
